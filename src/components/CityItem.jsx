@@ -1,4 +1,13 @@
 import styles from "./CityItem.module.css";
+import PropTypes from "prop-types";
+CityItem.propTypes = {
+  city: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    cityName: PropTypes.string.isRequired,
+    emoji: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
