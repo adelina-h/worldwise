@@ -3,14 +3,16 @@ import styles from "./CountryList.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
 import PropTypes from "prop-types";
+import { useCities } from "../contexts/CitiesContext";
 CountryList.propTypes = {
   cities: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
   country: PropTypes.string,
   message: PropTypes.string,
 };
-
-function CountryList({ cities, isLoading }) {
+/* eslint-disable no-unused-vars */
+function CountryList() {
+  const { cities, isLoading } = useCities;
   if (isLoading) {
     return <Spinner />;
   }
